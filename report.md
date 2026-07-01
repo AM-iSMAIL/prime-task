@@ -75,8 +75,8 @@ Evaluating Closed PnL across market sentiment regimes indicates a non-linear, bi
 | **Extreme Greed** | $2,715,170.00 | 20,853 | $130.21 | $2,159.20 | 89.17% |
 
 #### Observations:
-- **Bimodal Profitability Peaks:** Trading performance is optimized in two opposite regimes: **Extreme Greed** (Average PnL: **$130.21**, Win Rate: **89.17%**) and **Fear** (Average PnL: **$112.63**, Win Rate: **87.29%**). 
-- **Speculative Momentum:** Extreme Greed yields the highest average profitability and win rates, indicating that momentum-following strategies are highly effective when market euphoria is at its peak. However, it also displays the highest variance (standard deviation of **$2,159.20**), indicating elevated risk.
+- **Bimodal Profitability Peaks:** Trading performance is optimized in two opposite regimes: **Extreme Greed** (Average PnL: **$130.21**, Win Rate: **89.17%**) and **Fear** (Average PnL: **$112.63**, Win Rate: **87.29%**). See **Figure 1 (plots/sentiment_distribution.png)** for the distribution of sentiment states.
+- **Speculative Momentum:** Extreme Greed yields the highest average profitability and win rates, indicating that momentum-following strategies are effective when market euphoria is at its peak. However, it also displays the highest variance (standard deviation of **$2,159.20**), indicating elevated risk. See **Figure 2 (plots/cumulative_pnl_by_sentiment.png)** for the timeline of cumulative Closed PnL by sentiment.
 - **Dip-Buying Quality:** Fear periods represent profitable buying opportunities (mean reversion) that generate strong PnL upon subsequent rebounds, while exhibiting a moderate standard deviation (**$772.39**).
 - **Regime Transition Risk:** 
   - Shifting from **Fear to Extreme Fear** results in a decline in performance (Average PnL falls to **$71.03**, Win Rate falls to **76.22%**), reflecting the risk of catching a falling knife during capitulation.
@@ -93,7 +93,7 @@ A side-by-side comparison of Long and Short trades outlines a long bias in profi
 | **Short** | $3,665,339.31 | 36,057 | $101.65 | $1,858.87 | $4.77 | 78.00% | $180,787,000 | $5,013.93 |
 
 #### Observations:
-- **Long Strategy Dominance:** Long positions captured **64.3%** of all realized profits ($6.59M vs $3.67M) and were executed almost twice as frequently. They also featured a higher win rate (**85.95%** vs **78.00%**).
+- **Long Strategy Dominance:** Long positions captured **64.3%** of all realized profits ($6.59M vs $3.67M) and were executed almost twice as frequently. They also featured a higher win rate (**85.95%** vs **78.00%**). See **Figure 3 (plots/long_vs_short_performance.png)** for the side-by-side strategy comparison.
 - **Short Strategy Risk Profile:** Short trades are less frequent but exhibit a slightly higher average profit per trade (**$101.65** vs **$96.41**). However, the standard deviation for Short trades (**$1,858.87**) is over double that of Long trades (**$879.76**), indicating that shorting carries higher tail risk.
 
 ---
@@ -101,7 +101,7 @@ A side-by-side comparison of Long and Short trades outlines a long bias in profi
 ### 4.3 Trading Volume and Activity Trends
 - **Total Volume:** **$1,191,098,773.60**
 - **Average Daily Volume:** ~$2,486,636.27 (Standard Deviation: **$6,290,451.60**)
-- **Volatility Spikes:** Volume is highly volatile. When plotted against the 7-day Moving Average of the Fear & Greed index, these spikes strongly align with periods of **Fear and Extreme Fear** (low index values). Market participants trade in larger sizes and higher frequencies during panic capitulations.
+- **Volatility Spikes:** Volume is highly volatile. When plotted against the 7-day Moving Average of the Fear & Greed index (**Figure 4: plots/daily_volume_vs_sentiment.png**), these spikes strongly align with periods of **Fear and Extreme Fear** (low index values). Market participants trade in larger sizes and higher frequencies during panic capitulations.
 
 ---
 
@@ -117,7 +117,7 @@ We analyzed trading activity at the asset level to identify volume leaders and r
 | **@107** | 29,992 | $55,760,900 | $2,783,910.00 | $1,859.19 | $5,887.96 |
 
 #### Observations:
-- **Institutional Volume Leader:** **BTC** represents **54.1%** of all trading volume on the platform ($644.23M) with an average trade size of **$24,717.30**, indicating institutional or high-net-worth trader focus. It also features the highest standard deviation of trade sizes (**$95,334.00**).
+- **Institutional Volume Leader:** **BTC** represents **54.1%** of all trading volume on the platform ($644.23M) with an average trade size of **$24,717.30**, indicating institutional or high-net-worth trader focus. See **Figure 5 (plots/top_assets.png)** for asset volume and transaction count comparisons.
 - **Retail & Algo Leader:** **HYPE** is the most frequently traded coin with **68,005 transactions**, but has a much lower average trade size ($2,087.94).
 - **Outsized Alpha Generators:** While BTC dominated volume, the asset that generated the most profit was **@107** with **$2.78 Million** in net Closed PnL, followed closely by **HYPE ($1.95 Million)** and **SOL ($1.64 Million)**.
 - **Underperforming Assets:** Certain assets generated net losses for the platform's traders, notably **TRUMP (-$364,825)** and **FARTCOIN (-$100,687)**, indicating poor trading performance in highly speculative meme coins.
@@ -140,7 +140,7 @@ An analysis of account-level performance indicates concentration:
 3. `0x3998f134d6aaa2b6a5f723806d00fd2bbbbce891`: **-$31,203.60** (815 trades, 65.09% Win Rate)
 
 #### Observations:
-- **Profit Concentration:** The top two traders alone earned **$3.74 Million**, which represents **36.5%** of the entire platform's net realized Closed PnL. This highlights high dependency on a small cohort of elite traders.
+- **Profit Concentration:** The top two traders alone earned **$3.74 Million**, which represents **36.5%** of the entire platform's net realized Closed PnL. See **Figure 6 (plots/top_traders.png)** for trader profitability distributions.
 - **Systematic Profiles:** Account `0xbaaaf...7864` achieved a **99.12% win rate** over **21,192 trades**, and `0x430f0...7713` achieved a **100% win rate** over **1,237 trades**. These profiles are highly indicative of market-making algorithms or arbitrage bots which capitalize on low-risk spreads.
 - **Risk Mitigation:** The largest individual loss was limited to **-$167,621**, compared to the top profit of **+$2.14M**, showing that traders successfully cap tail-risk losses.
 
@@ -177,7 +177,7 @@ An analysis of account-level performance indicates concentration:
 - **Max:** 94 (Extreme Greed)
 
 #### Observations:
-- **Panic-Driven Volume Spikes:** The moderate negative Pearson correlation (-0.26) between daily market sentiment and volume/fees indicates that daily trading volume increases linearly as fear rises (lower index values). This aligns with panic selling, liquidations, and hedging during drawdowns.
+- **Panic-Driven Volume Spikes:** The moderate negative Pearson correlation (-0.26) between daily market sentiment and volume/fees indicates that daily trading volume increases linearly as fear rises (lower index values). See **Figure 7 (plots/correlation_heatmap.png)** for Pearson and Spearman heatmaps.
 - **Trade-Level Size Reductions in Greed:** The Spearman rank correlation between individual trade sizes and sentiment is **-0.12**, statistically demonstrating that trade sizes monotonically decrease as market greed rises.
 - **Strong Rank Correlation of Size & PnL:** The trade-level Spearman rank correlation between trade size and realized Closed PnL is **+0.48**, which is substantially higher than the Pearson correlation (+0.16). This indicates a strong monotonic relationship where larger trade sizes are associated with larger realized profit/loss, though the relationship is non-linear.
 - **Non-Linear Sentiment-Profitability Relationship:** The lack of linear correlation between Fear & Greed and Closed PnL (-0.08 daily, +0.01 trade-level) confirms that market sentiment does not have a simple linear relationship with trading profitability. Profitability is non-linear and bimodal, peaking at the extremes (Extreme Greed and Fear) while dropping in Neutral/Greed/Extreme Fear.

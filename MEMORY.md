@@ -24,3 +24,6 @@ This project involves analyzing historical trading data and merging it with the 
 - [x] Create Jupyter Notebook (`analysis.ipynb`) with visualizations and markdown observations
 - [x] Write executive report (`report.md`) containing insights and recommendations
 - [x] Verify execution of notebook and script
+- [x] Refine case study tone, add Assumptions, Limitations, and Future Work
+- [x] Compute advanced stats (Spearman correlation & standard deviations)
+- [x] Create project README.md and re-generate ZIP archive
