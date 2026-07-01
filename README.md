@@ -12,24 +12,22 @@ The primary objective of this project is to perform an Exploratory Data Analysis
 
 ## Project Structure
 ```
-product/
+prime_task/
 ├── .gitignore               # Version control exclusion file
-├── MEMORY.md                # IDE project tracking memory
 ├── README.md                # Project documentation (this file)
 ├── analysis.ipynb           # Executed Jupyter Notebook
 ├── analysis.py              # Modular Python pipeline script
 ├── fear_greed_index.csv     # Raw sentiment dataset
 ├── historical_data.csv      # Raw trading transaction dataset
 ├── requirements.txt         # Locked dependencies file
-├── plots/                   # Saved high-resolution figures
-│   ├── correlation_heatmap.png
-│   ├── cumulative_pnl_by_sentiment.png
-│   ├── daily_volume_vs_sentiment.png
-│   ├── long_vs_short_performance.png
-│   ├── sentiment_distribution.png
-│   ├── top_assets.png
-│   └── top_traders.png
-└── prime_task.zip           # Complete project bundle
+└── plots/                   # Saved high-resolution figures
+    ├── correlation_heatmap.png
+    ├── cumulative_pnl_by_sentiment.png
+    ├── daily_volume_vs_sentiment.png
+    ├── long_vs_short_performance.png
+    ├── sentiment_distribution.png
+    ├── top_assets.png
+    └── top_traders.png
 ```
 
 ## Installation
@@ -81,7 +79,7 @@ jupyter nbconvert --to notebook --execute --inplace analysis.ipynb
 Upon running the pipeline, the following professional-grade artifacts are generated:
 - **`analysis.log`:** Runtime logs detailing ingestion sizes, cleaning counts, and task progress using neutral terminology.
 - **`report.md`:** A comprehensive executive summary report written in an objective, academic style outlining prep steps, strategy side definitions, bimodal metrics, and leaderboards.
-- **`plots/sentiment_distribution.png`:** Combined chart representing the Fear & Greed value histogram and classification day counts (Figure 1).
+- **`plots/sentiment_distribution.png`:** Combined chart representing the Fear & Greed value distribution and classification day counts (Figure 1).
 - **`plots/cumulative_pnl_by_sentiment.png`:** Line chart tracking cumulative closed PnL with translucent color blocks overlaying daily market sentiment (Figure 2).
 - **`plots/long_vs_short_performance.png`:** Strategy comparison showing net Closed PnL, win rates, and closed transaction counts side-by-side (Figure 3).
 - **`plots/daily_volume_vs_sentiment.png`:** Dual-axis visualization showing volume volatility against the 7-day moving average of the sentiment index (Figure 4).

@@ -220,3 +220,11 @@ To extend this study, the following work is proposed:
    - Since trading volume and transaction counts expand during low-sentiment periods (Fear/Extreme Fear, Pearson correlation -0.26), execution servers, database write capacity, and API rate-limit configurations must scale up automatically during low-sentiment days.
 2. **Fee Optimization Policies:**
    - Transaction fees total **$245,849.21**, primarily concentrated during high-volume panic sell-offs. Systematic traders and the platform should implement fee-reduction structures (e.g. holding exchange utility tokens or negotiating market-maker fee rebates) to protect net margins.
+
+---
+
+## 8. Conclusion
+
+This case study demonstrates a robust quantitative link between daily market sentiment (measured by the Fear & Greed Index) and trading activity on the platform. The data shows that trading volumes and transaction counts increase during periods of market fear, driving higher fee revenues for the platform but exposing directional traders to heightened variance and execution costs. Trading performance exhibits a non-linear, bimodal profile, yielding optimal net profitability during Extreme Greed and Fear regimes, while showing sub-optimal performance during standard Greed and Neutral periods. 
+
+Furthermore, Long trading strategies consistently outperform Short strategies in win rate, net PnL, and risk-adjusted return (variance). By incorporating study assumptions and limitations, these findings establish a baseline for developing predictive systematic trading strategies and implementing automated risk-management adjustments based on sentiment indicators.
