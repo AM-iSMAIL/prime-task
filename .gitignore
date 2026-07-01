@@ -16,3 +16,6 @@ __pycache__/
 # System logs
 *.log
 analysis.log
+
+# Zip archives
+*.zip
